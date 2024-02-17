@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Head from "./head";
 import Header from "../components/Header/Header";
+import Providers from "./Providers";
+import Navbar from "@/components/Navbar/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +18,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <Head />
       <body className={inter.className}>
-        <Header />
-        {/* Navbar */}
-        {/* SearchBox */}
-        {children}
+        <Providers>
+          <Header />
+          {/* Navbar */}
+          <Navbar />
+          {/* SearchBox */}
+          {children}
+        </Providers>
       </body>
     </html>
   );
