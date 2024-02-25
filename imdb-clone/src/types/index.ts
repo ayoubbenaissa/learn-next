@@ -15,3 +15,8 @@ export type FetchedData = {
     vote_average: number;
     vote_count: number;
 };
+
+export interface NextPageProps<SlugType = string> {
+	params: { id: SlugType };
+	searchParams?: { [key: string]: string | string[] | undefined };
+};
